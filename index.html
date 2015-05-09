@@ -17,9 +17,25 @@
         <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.js'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.js'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js'></script>
+        <script src="charts.js"></script>
     </head>
 
     <body>
-        <script src="charts.js"></script>
+
+        <button style="margin: 0;" type="button" class="btn btn-info dc-data-count" onclick="dc.filterAll(); dc.renderAll();">Reset All (<span class="filter-count" />/<span class="total-count" />)</button>
+
+        <div class='span4' id='health'>
+            <h4>
+                Health
+                <span>
+                    <a class="reset"
+                       href="javascript:charts['health'].filterAll(); dc.redrawAll();"
+                       style="display: none;">
+                        reset
+                    </a>
+                </span>
+	    </h4>
+        </div>
+
     </body>
 </html>
