@@ -33,7 +33,7 @@ d3.csv('/data.csv', (data) ->
   charts['dbh-vs-crown-cover']
   .width(300)
   .height(300)
-  .x(d3.scale.linear().domain([0, 20]))
+  .x(d3.scale.linear().domain([0, 100]))
   .yAxisLabel("DBH")
   .xAxisLabel("Crown Cover")
   .symbolSize(8)
