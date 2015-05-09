@@ -26,6 +26,22 @@ d3.csv('/data.csv', (data) ->
   .minAngleForLabel(0)
 
 
+  charts['dbh-vs-crown-cover'] = dc.scatterPlot('#dbh-vs-crown-cover')
+
+  dbhVsCrownDimension = facts.dimension((d) -> [d.DBH, d['Crown Cover']])
+
+  charts['dbh-vs-crown-cover']
+  .width(300)
+  .height(300)
+  .x(d3.scale.linear().domain([0, 20]))
+  .yAxisLabel("DBH")
+  .xAxisLabel("Crown Cover")
+  .symbolSize(8)
+  .clipPadding(10)
+  .dimension(dbhVsCrownDimension)
+  .group(dbhVsCrownDimension.group())
+
+
   dc.dataCount(".dc-data-count")
   .dimension(facts)
   .group(all)
