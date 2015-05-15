@@ -29,44 +29,14 @@
 
         <div class='container' id='main-container'>
             <div class='content'>
+                <button style="margin: 0;" type="button" class="btn btn-info dc-data-count" onclick="dc.filterAll(); dc.renderAll();">Reset All (<span class="filter-count" />/<span class="total-count" />)</button>
                 <div class='container' style='font: 10px sans-serif;'>
                     <h3>Pine Mortality Visualization</h3>
-
-                    <button style="margin: 0;" type="button" class="btn btn-info dc-data-count" onclick="dc.filterAll(); dc.renderAll();">Reset All (<span class="filter-count" />/<span class="total-count" />)</button>
-
-                    <div class='row' style="border: 2px lightgray solid; border-bottom-style:hidden">
-                        <div class='span12' id='dbh-vs-crown-cover'>
-                                <h4>
-                                    Crown Cover and DBH
-                                    <span>
-                                        <a class="reset"
-                                           href="javascript:charts['dbh-vs-crown-cover'].filterAll(); dc.redrawAll();"
-                                           style="display: none;">
-                                            reset
-                                        </a>
-                                    </span>
-                            </h4>
-                        </div>
-                    </div>
-                    <div class='row' style="border: 2px lightgray solid; border-bottom-style:hidden">
-                        <div class='span12' id='scatter'>
-                            <h4>
-                                Health
-                                <span>
-                                    <a class="reset"
-                                       href="javascript:charts['scatter'].filterAll(); dc.redrawAll();"
-                                       style="display: none;">
-                                        reset
-                                    </a>
-                                </span>
-                            </h4>
-                        </div>
-                    </div>
                     
                     <div class="row" style="border: 2px lightgray solid; ">   
                         <div class='span4' id='site'>
                             <h4>
-                                Trees Per Site
+                                Site #
                                 <span>
                                     <a class="reset"
                                        href="javascript:charts['site'].filterAll(); dc.redrawAll();"
@@ -100,11 +70,9 @@
                                 </span>
                             </h4>
                         </div>
-                    </div>
-                    <div class='span12 table-graph' style="border: 2px lightgray solid; border-top-style:hidden"> 
                         <div class='span4' id='health'>
                             <h4>
-                                Healthy Trees
+                                Health
                                 <span>
                                     <a class="reset"
                                        href="javascript:charts['health'].filterAll(); dc.redrawAll();"
@@ -114,12 +82,38 @@
                                 </span>
                            </h4>
                         </div>
-                        <div class='span4' id='beetle'>
+                    </div>
+                    <div class='span12 table-graph' style="border: 2px lightgray solid; border-top-style:hidden"> 
+                        <div class='span12' id='beetlehistogram'>
+                        <h4>
+                            Concentration of Beetles per Species
+                            <span>
+                                <a class="reset"
+                                   href="javascript:charts['beetlehistogram'].filterAll(); dc.redrawAll();"
+                                   style="display: none;">
+                                    reset
+                                </a>
+                            </span>
+                        </h4>
+                        </div>
+                        <div class='span4' id='livehistogram'>
                             <h4>
-                                Beetle Damage
+                                Live Trees by Species over Time
                                 <span>
                                     <a class="reset"
-                                       href="javascript:charts['beetle'].filterAll(); dc.redrawAll();"
+                                       href="javascript:charts['livehistogram'].filterAll(); dc.redrawAll();"
+                                       style="display: none;">
+                                        reset
+                                    </a>
+                                </span>
+                            </h4>
+                        </div>
+                        <div class='span12' id='histogram'>
+                            <h4>
+                                Overall Forest Health Over Time
+                                <span>
+                                    <a class="reset"
+                                       href="javascript:charts['histogram'].filterAll(); dc.redrawAll();"
                                        style="display: none;">
                                         reset
                                     </a>
@@ -127,6 +121,19 @@
                             </h4>
                         </div>
                     </div>
+                <div class='row' style="border: 2px lightgray solid;">
+                        <div class='span12' id='scatter'>
+                            <h4>
+                                DBH grouped by Health and Species over Time
+                                <span>
+                                    <a class="reset"
+                                       href="javascript:charts['scatter'].filterAll(); dc.redrawAll();"
+                                       style="display: none;">
+                                        reset
+                                    </a>
+                                </span>
+                            </h4>
+                        </div>
                 </div>
 
                 <div class='span12 table-graph' style="border: 2px lightgray solid; border-top-style:hidden">
