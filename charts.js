@@ -86,7 +86,7 @@
         return 0;
       }
     });
-    charts['histogram'].height(400).width(350).dimension(yearHistogramDimension).group(hGroup, "Heatlhy").stack(uGroup, "Unhealthy").stack(sGroup, "Sick").stack(dGroup, "Dead").ordinalColors(['green', '#FFD700', 'orange', 'red']).elasticY(true).xAxisLabel("Year").x(d3.scale.linear().domain([2015, 2019])).yAxisLabel("Trees by health categories");
+    charts['histogram'].height(400).width(350).dimension(yearHistogramDimension).group(hGroup, "Heatlhy").stack(uGroup, "Unhealthy").stack(sGroup, "Sick").stack(dGroup, "Dead").ordinalColors(['green', '#FFD700', 'orange', 'red']).elasticY(true).xAxisLabel("Year").x(d3.scale.linear().domain([2015, 2019])).yAxisLabel("Trees by health categories").xAxis().tickFormat(d3.format("d"));
     charts['livehistogram'] = dc.barChart('#livehistogram');
     liveHistogramDimension = facts.dimension(function(d) {
       return [d.Year];
@@ -112,7 +112,7 @@
         return 0;
       }
     });
-    charts['livehistogram'].height(400).width(350).dimension(liveHistogramDimension).group(sabiGroup, "Sabiniana").stack(coulGroup, "Coulter").stack(atteGroup, "Attenuata").ordinalColors(['#006400', '#32CD32', '#3CB371']).elasticY(true).xAxisLabel("Year").x(d3.scale.linear().domain([2015, 2019])).yAxisLabel("Number of Healthy Trees").legend(dc.legend().x(200).y(10).itemHeight(13).gap(5));
+    charts['livehistogram'].height(400).width(350).dimension(liveHistogramDimension).group(sabiGroup, "Sabiniana").stack(coulGroup, "Coulter").stack(atteGroup, "Attenuata").ordinalColors(['#006400', '#32CD32', '#3CB371']).elasticY(true).xAxisLabel("Year").x(d3.scale.linear().domain([2015, 2019])).yAxisLabel("Number of Healthy Trees").legend(dc.legend().x(200).y(10).itemHeight(13).gap(5)).xAxis().tickFormat(d3.format("d"));
     charts['beetlehistogram'] = dc.barChart('#beetlehistogram');
     beetleHistogramDimension = facts.dimension(function(d) {
       return d.Species;

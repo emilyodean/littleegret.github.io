@@ -135,6 +135,7 @@ d3.csv('/PineDataCorrectHypothesis.csv', (data) ->
   .group(dimension.group())
   .xAxis().tickFormat(d3.format("d"))
 
+
   # Health Histogram
   charts['histogram'] = dc.barChart('#histogram')
   yearHistogramDimension = facts.dimension((d) -> [d.Year])
@@ -159,6 +160,7 @@ d3.csv('/PineDataCorrectHypothesis.csv', (data) ->
   .xAxisLabel("Year")
   .x(d3.scale.linear().domain([2015,2019]))
   .yAxisLabel("Trees by health categories")
+  .xAxis().tickFormat(d3.format("d"))
 
 
   # Live Trees Histogram
@@ -181,8 +183,10 @@ d3.csv('/PineDataCorrectHypothesis.csv', (data) ->
   .elasticY(true)
   .xAxisLabel("Year")
   .x(d3.scale.linear().domain([2015,2019]))
+  # .x(d3.time.scale().domain([new Date(2015, 0, 1), new Date(2021, 11, 31)]))
   .yAxisLabel("Number of Healthy Trees")
   .legend(dc.legend().x(200).y(10).itemHeight(13).gap(5))
+  .xAxis().tickFormat(d3.format("d"))
   
   # Beetle Damage by Tree Species Histogram
   charts['beetlehistogram'] = dc.barChart('#beetlehistogram')
